@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext/CartContext";
 
 const CartWidget = () => {
-    const { cuenta } = useContext(CartContext);
+    const { carrito } = useContext(CartContext);
 
 
-    return <div>{cuenta}🛒</div>;
+    return <div>{carrito}🛒</div>;
 }
 export default CartWidget

@@ -6,6 +6,7 @@ function ItemCount() {
     const {cuenta} = useContext(CartContext);
     const {increment} = useContext(CartContext);
     const {decrement} = useContext(CartContext);
+    const {click} = useContext(CartContext);
     // const [count, setCount] = useState(0);
     
 
@@ -52,7 +53,7 @@ function ItemCount() {
                 <span style={counterStyle}>{cuenta}</span>
                 <button style={buttonStyle} onClick={increment}>+</button>
             </div>
-            <button style={{ width: "auto", padding: "8px" }}>Agregar al carrito</button>
+            <button style={{ width: "auto", padding: "8px" }} onClick={click}>Agregar al carrito</button>
         </div>
 
     );
