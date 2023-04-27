@@ -21,7 +21,6 @@ const ItemDetail = () => {
                     docs.push({...doc.data(), id: doc.id})
             });
             setProducto(docs);
-            console.log(docs)
         };
         getProducto();
     }, [id])

@@ -20,7 +20,6 @@ const Category = () => {
                     docs.push({...doc.data(), id: doc.id})
             });
             setCatData(docs);
-            console.log(docs)
         };
         getCatData();
     }, [category])

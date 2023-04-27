@@ -44,7 +44,6 @@ function ItemCount() {
         alignItems: "center",
     };
 
-    console.log(cuenta);
 
     return (
         <div>

@@ -20,7 +20,6 @@ const ItemList = ()=> {
                     docs.push({...doc.data(), id: doc.id})
             });
             setProductos(docs);
-            console.log(docs)
         };
         getProductos();
     }, [])//la q no puede ir aqui
