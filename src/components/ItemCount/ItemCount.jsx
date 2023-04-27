@@ -1,16 +1,21 @@
-import React, {  useState } from "react";
-
+// import React, { useState } from "react";
+import { useContext } from "react";
+import { CartContext } from "../../contexts/CartContext/CartContext";
 function ItemCount() {
-    const [count, setCount] = useState(0);
+    // const {items} = useContext(CartContext);
+    const {cuenta} = useContext(CartContext);
+    const {increment} = useContext(CartContext);
+    const {decrement} = useContext(CartContext);
+    // const [count, setCount] = useState(0);
+    
 
+    // const increment = () => {
+    //     setCount(count + 1);
+    // };
 
-    const increment = () => {
-         setCount(count + 1);
-     };
-
-     const decrement = () => {
-         setCount(count - 1);
-     };
+    // const decrement = () => {
+    //     setCount(count - 1);
+    // };
 
     const buttonStyle = {
         padding: "10px 15px",
@@ -38,16 +43,18 @@ function ItemCount() {
         alignItems: "center",
     };
 
+    console.log(cuenta);
+
     return (
         <div>
             <div style={containerStyle}>
                 <button style={buttonStyle} onClick={decrement}>-</button>
-                <span style={counterStyle}>{count}</span>
+                <span style={counterStyle}>{cuenta}</span>
                 <button style={buttonStyle} onClick={increment}>+</button>
             </div>
-            <button style={{ width: "auto", padding: "8px"}}>Agregar al carrito</button>
+            <button style={{ width: "auto", padding: "8px" }}>Agregar al carrito</button>
         </div>
-        
+
     );
 }
 

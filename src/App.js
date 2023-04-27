@@ -1,5 +1,7 @@
+import { ItemsProvider } from './contexts/CartContext/CartContext';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 
 import NavBar from './components/NavBar/NavBar';
 
@@ -13,6 +15,7 @@ import Category from './pages/Category/Category';
 function App() {
 
   return (
+    <ItemsProvider>
       <Router>
         <div className="App">
           <NavBar/>
@@ -32,6 +35,7 @@ function App() {
             </div>
         </div>
       </Router>
+    </ItemsProvider>
   );
 }
 
