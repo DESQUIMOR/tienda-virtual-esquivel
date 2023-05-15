@@ -35,7 +35,7 @@ const ItemDetail = () => {
                             <Item data={producto}/>
                             <p style={{width: "350px", marginTop: "20px"}}> {producto.description}</p>
                             <div>
-                                <ItemCount style={{margin: "8px"}}/>
+                                <ItemCount compra={producto} style={{margin: "8px"}}/>
                             </div>
                     </div>
                     

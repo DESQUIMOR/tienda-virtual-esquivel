@@ -6,12 +6,14 @@ export const CartContext = createContext();
 const Cuenta = 0;
 const TotalCarrito = 0;
 const Aux = 0;
+const Compra = [];
 
 export const ItemsProvider = ({children}) => {
     // const [items, setItems] = useState(ItemsInStock);
     const [cuenta, setCount] = useState(Cuenta);
     const [carrito, setCarrito] = useState(TotalCarrito);
     const [aux, setAux] = useState(Aux);
+    const [compra, setCompra] = useState(Compra);
 
     const increment = () => {
         setCount(cuenta + 1);
@@ -26,11 +28,13 @@ export const ItemsProvider = ({children}) => {
     const click = () => {
         setCarrito(aux)
         setCount(0);
+        // setCompra([...compra, producto]);
+        // console.log(compra);
         
     };
 
     return(
-        <CartContext.Provider value = {{ cuenta, carrito, increment, decrement, click}}>{children}</CartContext.Provider>
+        <CartContext.Provider value = {{ cuenta, carrito, compra, setCompra, increment, decrement, click}}>{children}</CartContext.Provider>
     )
 }
 

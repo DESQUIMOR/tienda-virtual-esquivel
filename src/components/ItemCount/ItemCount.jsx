@@ -1,12 +1,16 @@
 // import React, { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext/CartContext";
-function ItemCount() {
+function ItemCount(producto) {
     // const {items} = useContext(CartContext);
     const {cuenta} = useContext(CartContext);
     const {increment} = useContext(CartContext);
     const {decrement} = useContext(CartContext);
     const {click} = useContext(CartContext);
+    const {compra} = useContext(CartContext);
+    const {setCompra} = useContext(CartContext);
+
+
     // const [count, setCount] = useState(0);
     
 
@@ -44,6 +48,10 @@ function ItemCount() {
         alignItems: "center",
     };
 
+    const ejecucion = () => {
+        click()
+        setCompra([...compra, producto]);
+    }
 
     return (
         <div>
@@ -52,7 +60,8 @@ function ItemCount() {
                 <span style={counterStyle}>{cuenta}</span>
                 <button style={buttonStyle} onClick={increment}>+</button>
             </div>
-            <button style={{ width: "auto", padding: "8px" }} onClick={click}>Agregar al carrito</button>
+            <button style={{ width: "auto", padding: "8px" }} onClick={ejecucion}>Agregar al carrito</button>
+            {/* Aqui deberia poder escribir en firebase los productos que se agregan al carrito para luego llamar a la base de datos de compras y poder desplegar las tarjetas como en item detail */}
         </div>
 
     );
